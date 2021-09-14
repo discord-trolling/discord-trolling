@@ -1,0 +1,19 @@
+{
+  "name": "discord-trolling",
+  "version": "1.0.0",
+  "description": "A discord library simplifying discord.js",
+  "main": "index.js",
+  "keywords": [
+    "discord",
+    "discord.js",
+    "wrapper"
+  ],
+  "author": "ferretcode",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "chalk": "^4.1.2",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^13.1.0"
+  }
+}
