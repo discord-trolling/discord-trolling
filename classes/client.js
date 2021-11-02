@@ -21,20 +21,6 @@ class Client extends discord.Client {
 
       console.log(chalk.bgGreen("READY:") + ` Bot has logged in!`);
     };
-
-    /**
-     * Listens for a new command interaction
-     * @returns {Promise<discord.CommandInteraction>} a promise which resolves to a command interaction
-     */
-    this.command = () => {
-      return new Promise((resolve) => {
-        this.on("interactionCreate", (interaction) => {
-          if (!interaction.isCommand()) return;
-
-          resolve(interaction);
-        });
-      });
-    };
   }
 }
 
