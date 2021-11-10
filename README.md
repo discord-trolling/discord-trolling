@@ -22,6 +22,7 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
   - Built-in pm2 integration for easy hosting/monitoring
   - Built-in HTTP or Webhook requests for logging
   - Full documentation
+  - Voice wrapper
 - ### Low priority
   - QOL features
 - ### Not confirmed
