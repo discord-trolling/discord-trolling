@@ -1,10 +1,10 @@
-# discord-trolling
+# discord-trolling 👏
 
 An easy to use discord.js wrapper for people who thought V13 was too verbose.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J54IL17)
 
-## Features
+## Features 📄
 
 - Easy to use, familiar API
 - Fast to develop with
@@ -12,11 +12,11 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
 - Simple command registration
 - troll funni
 
-## Acknowledgements
+## Acknowledgements 💌
 
 - [JiggsFld who helped me test in a production environment](https://github.com/JiggsFld)
 
-## Roadmap
+## Roadmap 🛣️
 
 - ### Big Features
   - Built-in pm2 integration for easy hosting/monitoring
@@ -26,7 +26,7 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
   - QOL features
 - ### Not confirmed
 
-## Quickstart
+## Quickstart 💨
 
 ```javascript
 //import components from the library
@@ -75,11 +75,11 @@ bot.on("interactionCreate", (interaction) => {
 bot.troll("your bot token");
 ```
 
-## Running Tests
+## Running Tests 🧐
 
 To verify that the library is working, please open test.js and replace the "your bot token", "your bot id" and "your guild id" fields with the respective information, and run the file.
 
-## Contributing
+## Contributing 💻
 
 Contributions are always welcome and great to see!
 
