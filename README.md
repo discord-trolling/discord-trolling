@@ -2,6 +2,8 @@
 
 An easy to use discord.js wrapper for people who thought V13 was too verbose.
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J54IL17)
+
 ## Features
 
 - Easy to use, familiar API
