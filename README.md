@@ -4,6 +4,8 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J54IL17)
 
+[![npm version](https://badge.fury.io/js/discord-trolling.svg)](https://badge.fury.io/js/discord-trolling)
+
 ## Features 📄
 
 - Easy to use, familiar API
