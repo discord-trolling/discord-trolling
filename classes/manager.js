@@ -22,15 +22,15 @@ class Manager {
     return new Promise((resolve, reject) => {
       if (!Array.isArray(commands))
         reject("Commands argument is not an array!");
-      if (requestInformation.isGuildCommand)
+      if (requestInformation.isGuildCommand) {
         if (Object.keys(requestInformation).length !== 4)
           reject(
             "Your request information needs to be no more or no less than 4 arguments!"
           );
-        else if (Object.keys(requestInformation).length !== 3)
-          reject(
-            "Your request information needs to be no more or no less than 3 arguments!"
-          );
+      } else if (Object.keys(requestInformation).length !== 3)
+        reject(
+          "Your request information needs to be no more or no less than 3 arguments!"
+        );
 
       for (let info in requestInformation) {
         if (typeof info !== "string")
