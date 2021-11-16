@@ -1,6 +1,6 @@
 {
   "name": "discord-trolling",
-  "version": "1.0.8",
+  "version": "1.1.0",
   "description": "A discord library simplifying discord.js",
   "main": "index.js",
   "keywords": [
@@ -15,5 +15,9 @@
     "chalk": "^4.1.2",
     "discord-api-types": "^0.22.0",
     "discord.js": "^13.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferretcode/discord-trolling"
   }
 }
