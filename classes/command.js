@@ -41,7 +41,7 @@ class Command {
      * @param  {...Option} options a list of command option classes
      */
     this.finalizeOptions = (...options) => {
-      if (!option) throw SyntaxError("Missing parameter: options!");
+      if (!options) throw SyntaxError("Missing parameter: options!");
 
       if (!Array.isArray(options))
         throw TypeError("Parameter: options is not an array!");
