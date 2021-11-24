@@ -46,7 +46,7 @@ class Command {
       if (!Array.isArray(options))
         throw TypeError("Parameter: options is not an array!");
 
-      if (options.filter((o) => !(o instanceof Option)).length > 0)
+      if (options.some((o) => !o instanceof Option))
         throw TypeError(
           "An option in the options array is not an instance of the Option class!"
         );
