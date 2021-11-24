@@ -1,6 +1,6 @@
 {
   "name": "discord-trolling",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A discord library simplifying discord.js",
   "main": "index.js",
   "keywords": [
