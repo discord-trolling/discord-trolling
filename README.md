@@ -54,7 +54,7 @@ let command = () => {
   ping.finalizeOption(option);
 
   //finalize command structure
-  ping = ping.troll();
+  return ping.troll();
 };
 
 //register command
@@ -67,7 +67,7 @@ Manager.registerCommands([command()], {
 }).catch((err) => console.error(err));
 
 //create client
-let bot = new Client({ intents: [client.Intents.FLAGS.GUILDS] });
+let bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 //listen for a command
 bot.on("interactionCreate", (interaction) => {

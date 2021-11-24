@@ -18,17 +18,17 @@ let command = () => {
 
   ping.finalizeOption(option);
 
-  ping = ping.troll();
+  return ping.troll();
 };
 
 Manager.registerCommands([command()], {
   token: "your bot token",
-  clientId: "your bot id",
+  clientId: "your client id",
   guildId: "your guild id",
   isGuildCommand: true,
 }).catch((err) => console.error(err));
 
-let bot = new Client({ intents: [client.Intents.FLAGS.GUILDS] });
+let bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 bot.on("interactionCreate", (interaction) => {
   if (interaction.commandName === "pong") interaction.reply("pong");
