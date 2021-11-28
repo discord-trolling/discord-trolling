@@ -56,6 +56,7 @@ class Command {
       options = options.flat();
 
       this.json.options.push(options.map((option) => option.json));
+      this.json.options.flat();
     };
 
     /**
