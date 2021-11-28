@@ -25,6 +25,8 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
   - Built-in HTTP or Webhook requests for logging
   - Full documentation
   - Voice wrapper
+  - Embed maker
+  - Built-in command handler
 - ### Low priority
   - QOL features
 - ### Not confirmed
