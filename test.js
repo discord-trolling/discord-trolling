@@ -24,10 +24,12 @@ let command = () => {
   option2.setDescription("paing");
   option2.setValue("paing");
 
-  ping.finalizeOptions(option, option2);
+  ping.finalizeOptions([option, option2]);
 
   return ping.troll();
 };
+
+console.log(JSON.stringify(command(), null, 2));
 
 Manager.registerCommands([command()], {
   token: "your bot token",
