@@ -16,7 +16,15 @@ let command = () => {
   option.setDescription("ping");
   option.setValue("ping");
 
-  ping.finalizeOption(option);
+  let option2 = ping.createOption();
+
+  option2.setName("paing");
+  option2.setRequired(true);
+  option2.setType(option2.types.STRING);
+  option2.setDescription("paing");
+  option2.setValue("paing");
+
+  ping.finalizeOptions(option, option2);
 
   return ping.troll();
 };
