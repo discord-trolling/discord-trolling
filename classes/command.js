@@ -53,7 +53,7 @@ class Command {
 
       if (!this.json.options) this.json.options = [];
 
-      this.json.options.push(options);
+      this.json.options.push(options.map((option) => option.json));
     };
 
     /**
