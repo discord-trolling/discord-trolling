@@ -1,10 +1,16 @@
 # discord-trolling 👏
 
-An easy to use discord.js wrapper for people who thought V13 was too verbose.
+An easy to use discord.js wrapper for people who want an easy Discord API library
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J54IL17)
 
 [![npm version](https://badge.fury.io/js/discord-trolling.svg)](https://badge.fury.io/js/discord-trolling)
+
+Create a new discord-trolling project:
+
+```
+npx create-discord-trolling-app
+```
 
 ## Features 📄
 
@@ -12,6 +18,7 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
 - Fast to develop with
 - Built in, easy command structuring
 - Simple command registration
+- Automatic project generator
 - troll funni
 
 ## Acknowledgements 💌
@@ -31,9 +38,23 @@ An easy to use discord.js wrapper for people who thought V13 was too verbose.
 
 ## Quickstart 💨
 
+To get started, you can run: `npx create-discord-trolling-app`,
+
+OR
+
+- Run `npm install discord-trolling`
+- Create index.js
+- Paste these contents inside:
+
 ```javascript
 //import components from the library
-const { Client, Intents, Manager, Command } = require("discord-trolling");
+const {
+  Client,
+  Intents,
+  Manager,
+  Command,
+  OptionTypes,
+} = require("discord-trolling");
 
 //recommended format for creating command structures
 let command = () => {
@@ -47,7 +68,7 @@ let command = () => {
 
   option.setName("ping");
   option.setRequired(true);
-  option.setType(option.types.STRING);
+  option.setType(OptionTypes.STRING); //you can also do "option.types.STRING"
   option.setDescription("ping");
   option.setValue("ping");
 
