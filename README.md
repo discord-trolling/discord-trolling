@@ -32,6 +32,8 @@ npx create-discord-trolling-app
   - Built-in HTTP or Webhook requests for logging
   - Full documentation
   - Voice wrapper
+  - Embed maker
+  - Built-in command handler
 - ### Low priority
   - QOL features
 - ### Not confirmed
