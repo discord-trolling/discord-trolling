@@ -33,7 +33,7 @@ npx create-discord-trolling-app
   - Full documentation
   - Voice wrapper
   - Embed maker
-  - Built-in command handler
+  - ~~Built-in command handler~~
 - ### Low priority
   - QOL features
 - ### Not confirmed
