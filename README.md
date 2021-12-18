@@ -1,6 +1,6 @@
 # discord-trolling 👏
 
-An easy to use discord.js wrapper for people who want an easy Discord API library
+An easy to use discord.js wrapper for people who want to make Discord bots quickly
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/J3J54IL17)
 
@@ -12,7 +12,7 @@ Create a new discord-trolling project:
 npx create-discord-trolling-app
 ```
 
-## Features 📄
+# Features 📄
 
 - Easy to use, familiar API
 - Fast to develop with
@@ -21,11 +21,11 @@ npx create-discord-trolling-app
 - Automatic project generator
 - troll funni
 
-## Acknowledgements 💌
+# Acknowledgements 💌
 
 - [JiggsFld who helped me test in a production environment](https://github.com/JiggsFld)
 
-## Roadmap 🛣️
+# Roadmap 🛣️
 
 - ### Big Features
   - Built-in pm2 integration for easy hosting/monitoring
@@ -38,9 +38,9 @@ npx create-discord-trolling-app
   - QOL features
 - ### Not confirmed
 
-## Quickstart 💨
+# Quickstart 💨
 
-To get started, you can run: `npx create-discord-trolling-app`,
+To get started, you can run: `npx create-discord-trolling-app`, (recommended)
 
 OR
 
@@ -101,15 +101,15 @@ bot.on("interactionCreate", (interaction) => {
 bot.troll("your bot token");
 ```
 
-## Running Tests 🧐
+# Running Tests 🧐
 
 To verify that the library is working, please open test.js and replace the "your bot token", "your bot id" and "your guild id" fields with the respective information, and run the file.
 
-## Contributing 💻
+# Contributing 💻
 
 Contributions are always welcome and great to see!
 
-### You can either:
+## You can either:
 
 - Create your contribution, make a PR and hope a maintainer sees it.
 - Or join the Discord server at https://discord.gg/cvx9WS7V and propose an idea to me or a maintainer or tell us about a PR you made.

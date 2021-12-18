@@ -1,5 +1,3 @@
-const discord = require("discord.js");
-
 /**
  * A class for generating slash commands
  * @class Command

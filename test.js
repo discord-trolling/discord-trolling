@@ -1,6 +1,7 @@
 const { Client, Intents } = require("./classes/client");
 const { Manager } = require("./classes/manager");
 const { Command } = require("./classes/command");
+const { CommandHandler } = require("./classes/commandHandler");
 
 let command = () => {
   let ping = new Command();
@@ -32,16 +33,24 @@ let command = () => {
 console.log(JSON.stringify(command(), null, 2));
 
 Manager.registerCommands([command()], {
-  token: "your bot token",
-  clientId: "your client id",
-  guildId: "your guild id",
+  token: "your token here",
+  clientId: "your application id here",
+  guildId: "your guild id here",
   isGuildCommand: true,
 }).catch((err) => console.error(err));
 
 let bot = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
-bot.on("interactionCreate", (interaction) => {
-  if (interaction.commandName === "pong") interaction.reply("pong");
+const commandHandler = new CommandHandler({
+  path: __dirname + "/commands",
+  client: bot,
 });
 
-bot.troll("your bot token");
+commandHandler.startHandling();
+
+//if you want classic handling
+bot.on("interactionCreate", (interaction) => {
+  if (interaction.commandName === "pong") console.log("interaction recieved");
+});
+
+bot.troll("your token here");
