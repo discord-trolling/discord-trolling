@@ -32,6 +32,8 @@ class Command {
       if (!this.json.options) this.json.options = [];
 
       this.json.options.push(option.json);
+
+      return this;
     };
 
     /**
@@ -54,6 +56,8 @@ class Command {
       options = options.flat();
 
       this.json.options.push(...options.map((option) => option.json));
+
+      return this;
     };
 
     /**
@@ -68,6 +72,8 @@ class Command {
         throw RangeError("The name argument must not exceed 50 characters!");
 
       this.json.name = name;
+
+      return this;
     };
 
     /**
@@ -84,6 +90,8 @@ class Command {
         );
 
       this.json.description = description;
+
+      return this;
     };
 
     /**
@@ -133,6 +141,8 @@ class Option {
         throw TypeError("The type argument is not a valid type!");
 
       this.json.type = type.toString();
+
+      return this;
     };
 
     /**
@@ -147,6 +157,8 @@ class Option {
         throw RangeError("The name argument must not exceed 50 characters!");
 
       this.json.name = name;
+
+      return this;
     };
 
     /**
@@ -163,6 +175,8 @@ class Option {
         );
 
       this.json.description = description;
+
+      return this;
     };
 
     /**
@@ -177,6 +191,8 @@ class Option {
         throw RangeError("The value argument must not exceed 200 characters!");
 
       this.json.value = value;
+
+      return this;
     };
 
     /**
@@ -188,6 +204,8 @@ class Option {
         throw TypeError("The 'required' argument must be of type boolean!");
 
       this.json.required = required;
+
+      return this;
     };
 
     /**
@@ -220,6 +238,8 @@ class Option {
         value: options.value,
         required: options.required,
       });
+
+      return this;
     };
   }
 }
