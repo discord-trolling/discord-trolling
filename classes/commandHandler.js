@@ -82,6 +82,8 @@ class CommandHandler {
           (c) => c.command === interaction.commandName
         );
 
+        if(!parseable) return;
+
         if (parseable.defaultParseable) {
           let commandFile = require(`${this.path}/${parseable.command}`)[
             parseable.command
