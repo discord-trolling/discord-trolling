@@ -102,13 +102,13 @@ class CommandHandler {
         } else {
           try {
             let commandFile =
-              require(`${this.path}/${parseable.command}`).command;
+              require(`${this.path}/${parseable.command}`).Command;
             let command = new commandFile(interaction, this.client);
 
             command.run();
           } catch (err) {
             logger.logWarning(
-              `Command ${parseable.command} failed to run. Please ensure that the command class is named the command name or "command".`
+              `Command ${parseable.command} failed to run. Please ensure that the command class is named as the command name or "Command".`
             );
           }
         }
