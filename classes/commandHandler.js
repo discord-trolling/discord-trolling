@@ -53,15 +53,23 @@ class CommandHandler {
 
         let defaultParseable = true;
 
-        if (!commandFile[command])
-          return logger.logErr(
+        if (!commandFile[command]) {
+          logger.logErr(
             `A command was not found in file ${command}. Please add one or add it to the excluded files.`
           );
 
-        if (!commandFile[command] instanceof Troll)
-          return logger.logErr(
+          defaultParseable = false;
+
+          continue;
+        }
+
+        if (!commandFile[command] instanceof Troll) {
+          logger.logErr(
             `There was no instance of the Troll class found in file ${command}.`
           );
+
+          continue;
+        }
 
         objectToReturn.commands.push({ command, defaultParseable });
       }
@@ -82,7 +90,7 @@ class CommandHandler {
           (c) => c.command === interaction.commandName
         );
 
-        if(!parseable) return;
+        if (!parseable) return;
 
         if (parseable.defaultParseable) {
           let commandFile = require(`${this.path}/${parseable.command}`)[
@@ -91,6 +99,18 @@ class CommandHandler {
           let command = new commandFile(interaction, this.client);
 
           command.run();
+        } else {
+          try {
+            let commandFile =
+              require(`${this.path}/${parseable.command}`).command;
+            let command = new commandFile(interaction, this.client);
+
+            command.run();
+          } catch (err) {
+            logger.logWarning(
+              `Command ${parseable.command} failed to run. Please ensure that the command class is named the command name or "command".`
+            );
+          }
         }
       });
     };
