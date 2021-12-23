@@ -31,7 +31,7 @@ class CommandHandler {
       if (this.path)
         commands = fs
           .readdirSync(this.path)
-          .filter((f) => !this.excludedFiles.includes(f));
+          .filter((f) => !this.excludedFiles.includes(f) && !f.endsWith(".js"));
 
       return {
         commands: [...commands.map((c) => c.slice(0, c.lastIndexOf(".")))],
