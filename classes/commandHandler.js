@@ -55,8 +55,6 @@ class CommandHandler {
 
         if (!commandFile[command]) {
           defaultParseable = false;
-
-          continue;
         }
 
         objectToReturn.commands.push({ command, defaultParseable });
