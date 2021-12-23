@@ -54,19 +54,7 @@ class CommandHandler {
         let defaultParseable = true;
 
         if (!commandFile[command]) {
-          logger.logErr(
-            `A command was not found in file ${command}. Please add one or add it to the excluded files.`
-          );
-
           defaultParseable = false;
-
-          continue;
-        }
-
-        if (!commandFile[command] instanceof Troll) {
-          logger.logErr(
-            `There was no instance of the Troll class found in file ${command}.`
-          );
 
           continue;
         }
