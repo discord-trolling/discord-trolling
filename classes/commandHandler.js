@@ -96,6 +96,8 @@ class CommandHandler {
             logger.logWarning(
               `Command ${parseable.command} failed to run. Please ensure that the command class is named as the command name or "Command".`
             );
+
+            logger.logErr(err);
           }
         }
       });
