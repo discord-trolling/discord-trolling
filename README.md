@@ -6,6 +6,8 @@ An easy to use discord.js wrapper for people who want to make Discord bots quick
 
 [![npm version](https://badge.fury.io/js/discord-trolling.svg)](https://badge.fury.io/js/discord-trolling)
 
+[![Peek-2022-01-04-17-04.md.gif](https://s10.gifyu.com/images/Peek-2022-01-04-17-04.md.gif)](https://gifyu.com/image/SSDPs)
+
 Create a new discord-trolling project:
 
 ```
@@ -36,6 +38,7 @@ npx create-discord-trolling-app
   - ~~Built-in command handler~~
 - ### Low priority
   - QOL features
+  - Improved tests
 - ### Not confirmed
 
 # Quickstart 💨
@@ -99,6 +102,22 @@ bot.on("interactionCreate", (interaction) => {
 
 //login (trollface)
 bot.troll("your bot token");
+```
+
+- Create a new file at commands/ping.js
+
+```javascript
+const { Troll } = require("discord-trolling");
+
+module.exports.ping = class extends Troll {
+  constructor(interaction, client) {
+    super(interaction, client);
+
+    this.run = () => {
+      this.interaction.reply("pong!");
+    };
+  }
+};
 ```
 
 # Running Tests 🧐
