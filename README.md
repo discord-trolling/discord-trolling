@@ -6,7 +6,7 @@ An easy to use discord.js wrapper for people who want to make Discord bots quick
 
 [![npm version](https://badge.fury.io/js/discord-trolling.svg)](https://badge.fury.io/js/discord-trolling)
 
-[![Peek-2022-01-04-17-04.md.gif](https://s10.gifyu.com/images/Peek-2022-01-04-17-04.md.gif)](https://gifyu.com/image/SSDPs)
+<a href="https://gifyu.com/image/SSDPY"><img src="https://s10.gifyu.com/images/Peek-2022-01-04-17-04ab7aa7acdce6b994.gif" alt="Peek-2022-01-04-17-04ab7aa7acdce6b994.gif" border="0" height="500" width="600" /></a>
 
 Create a new discord-trolling project:
 
