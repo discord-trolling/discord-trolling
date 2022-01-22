@@ -14,6 +14,10 @@ Create a new discord-trolling project:
 npx create-discord-trolling-app
 ```
 
+Read the docs:
+
+https://ferretcode.gitbook.io/discord-trolling/
+
 # Features 📄
 
 - Easy to use, familiar API
@@ -21,6 +25,7 @@ npx create-discord-trolling-app
 - Built in, easy command structuring
 - Simple command registration
 - Automatic project generator
+- Documentation
 - troll funni
 
 # Acknowledgements 💌
@@ -32,7 +37,7 @@ npx create-discord-trolling-app
 - ### Big Features
   - Built-in pm2 integration for easy hosting/monitoring
   - Built-in HTTP or Webhook requests for logging
-  - Full documentation
+  - ~~Full documentation~~
   - Voice wrapper
   - Embed maker
   - ~~Built-in command handler~~
