@@ -78,27 +78,16 @@ class CommandHandler {
 
         if (!parseable) return;
 
-        if (parseable.defaultParseable) {
-          let commandFile = require(`${this.path}/${parseable.command}`)[
-            parseable.command
-          ];
+        try {
+          let commandFile =
+            require(`${this.path}/${parseable.command}`).Command;
           let command = new commandFile(interaction, this.client);
 
           command.run();
-        } else {
-          try {
-            let commandFile =
-              require(`${this.path}/${parseable.command}`).Command;
-            let command = new commandFile(interaction, this.client);
+        } catch (err) {
+          logger.logWarning(`Command ${parseable.command} failed to run.`);
 
-            command.run();
-          } catch (err) {
-            logger.logWarning(
-              `Command ${parseable.command} failed to run. Please ensure that the command class is named as the command name or "Command".`
-            );
-
-            logger.logErr(err);
-          }
+          logger.logErr(err);
         }
       });
     };

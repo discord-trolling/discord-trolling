@@ -1,3 +1,10 @@
+const {
+  MessageEmbed,
+  MessageActionRow,
+  MessageButton,
+  MessageSelectMenu,
+} = require("discord.js");
+
 const client = require("./classes/client");
 const command = require("./classes/command");
 const manager = require("./classes/manager");
@@ -10,4 +17,10 @@ module.exports = {
   ...manager,
   ...commandHandler,
   ...troll,
+  messages: {
+    MessageActionRow,
+    MessageEmbed,
+    MessageButton,
+    MessageSelectMenu,
+  },
 };
