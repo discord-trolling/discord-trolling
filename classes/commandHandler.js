@@ -68,8 +68,8 @@ class CommandHandler {
       this.client.on("interactionCreate", (interaction) => {
         if (!interaction.isCommand()) return;
 
-        commands[interaction.commandName]
-          ? commands[interaction.commandName].run()
+        commands.commands[interaction.commandName]
+          ? commands.commands[interaction.commandName].run()
           : logger.logErr(
               `Command ${interaction.commandName} was not found in directory ${this.path}`
             );
