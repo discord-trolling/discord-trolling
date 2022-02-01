@@ -51,9 +51,7 @@ class CommandHandler {
       for (let command of commands.commands) {
         let file = require(`${this.path}/${command}`);
 
-        file instanceof Troll
-          ? (objectToReturn.commands[command] = file.Command)
-          : "";
+        file ? (objectToReturn.commands[command] = file) : "";
       }
 
       return objectToReturn;
@@ -69,9 +67,12 @@ class CommandHandler {
         if (!interaction.isCommand()) return;
 
         commands.commands[interaction.commandName]
-          ? commands.commands[interaction.commandName].run()
+          ? new commands.commands[interaction.commandName].Command(
+              interaction,
+              this.client
+            ).run()
           : logger.logErr(
-              `Command ${interaction.commandName} was not found in directory ${this.path}`
+              `Command ${interaction.commandName} failed to run in ${this.path}`
             );
       });
     };
