@@ -49,11 +49,10 @@ class CommandHandler {
       };
 
       for (let command of commands.commands) {
-        let name = command.slice(0, command.lastIndexOf("."));
-        let file = require(name);
+        let file = require(command);
 
         file instanceof Troll
-          ? (objectToReturn.commands[name] = file.Command)
+          ? (objectToReturn.commands[command] = file.Command)
           : "";
       }
 
