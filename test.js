@@ -17,25 +17,15 @@ let command = () => {
   option.setDescription("ping");
   option.setValue("ping");
 
-  let option2 = ping.createOption();
-
-  option2.setName("paing");
-  option2.setRequired(true);
-  option2.setType(option2.types.STRING);
-  option2.setDescription("paing");
-  option2.setValue("paing");
-
-  ping.finalizeOptions([option, option2]);
+  ping.finalizeOptions(option);
 
   return ping.troll();
 };
 
-console.log(JSON.stringify(command(), null, 2));
-
 Manager.registerCommands([command()], {
-  token: "your token here",
-  clientId: "your application id here",
-  guildId: "your guild id here",
+  token: "",
+  clientId: "",
+  guildId: "",
   isGuildCommand: true,
 }).catch((err) => console.error(err));
 
@@ -48,9 +38,4 @@ const commandHandler = new CommandHandler({
 
 commandHandler.startHandling();
 
-//if you want classic handling
-bot.on("interactionCreate", (interaction) => {
-  if (interaction.commandName === "pong") console.log("interaction recieved");
-});
-
-bot.troll("your token here");
+bot.troll("token");

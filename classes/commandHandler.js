@@ -49,7 +49,7 @@ class CommandHandler {
       };
 
       for (let command of commands.commands) {
-        let file = require(command);
+        let file = require(`${this.path}/${command}`);
 
         file instanceof Troll
           ? (objectToReturn.commands[command] = file.Command)
