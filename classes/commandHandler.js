@@ -39,25 +39,22 @@ class CommandHandler {
     };
 
     /**
-     * Checks if commands are parseable without extra work
+     * A function for parsing commands and returning their command in an object
      * @returns object
      */
-    this._checkIfHandleable = () => {
+    this._parseCommands = () => {
       let commands = this._readCommands();
       let objectToReturn = {
-        commands: [],
+        commands: {},
       };
 
-      for (let command of commands.commands) {
-        let commandFile = require(`${this.path}/${command}`);
+      for (let command of commands) {
+        let name = command.slice(0, command.lastIndexOf("."));
+        let file = require(name);
 
-        let defaultParseable = true;
-
-        if (!commandFile[command]) {
-          defaultParseable = false;
-        }
-
-        objectToReturn.commands.push({ command, defaultParseable });
+        file instanceof Troll
+          ? (objectToReturn.commands[name] = file.Command)
+          : "";
       }
 
       return objectToReturn;
@@ -67,28 +64,16 @@ class CommandHandler {
      * Runs parseable commands when new interaction is recieved
      */
     this.startHandling = () => {
-      let handleableCommands = this._checkIfHandleable();
+      let commands = this._parseCommands();
 
       this.client.on("interactionCreate", (interaction) => {
         if (!interaction.isCommand()) return;
 
-        let parseable = handleableCommands.commands.find(
-          (c) => c.command === interaction.commandName
-        );
-
-        if (!parseable) return;
-
-        try {
-          let commandFile =
-            require(`${this.path}/${parseable.command}`).Command;
-          let command = new commandFile(interaction, this.client);
-
-          command.run();
-        } catch (err) {
-          logger.logWarning(`Command ${parseable.command} failed to run.`);
-
-          logger.logErr(err);
-        }
+        commands[interaction.commandName]
+          ? commands[interaction.commandName].run()
+          : logger.logErr(
+              `Command ${interaction.commandName} was not found in directory ${this.path}`
+            );
       });
     };
   }
