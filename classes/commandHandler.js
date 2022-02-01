@@ -48,7 +48,7 @@ class CommandHandler {
         commands: {},
       };
 
-      for (let command of commands) {
+      for (let command of commands.commands) {
         let name = command.slice(0, command.lastIndexOf("."));
         let file = require(name);
 
