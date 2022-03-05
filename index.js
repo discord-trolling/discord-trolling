@@ -10,6 +10,8 @@ const command = require("./classes/command");
 const manager = require("./classes/manager");
 const commandHandler = require("./classes/commandHandler");
 const troll = require("./classes/troll");
+const pluginManager = require("./classes/pluginManager");
+const plugin = require("./classes/plugin");
 
 module.exports = {
   ...client,
@@ -17,6 +19,8 @@ module.exports = {
   ...manager,
   ...commandHandler,
   ...troll,
+  ...pluginManager,
+  ...plugin,
   messages: {
     MessageActionRow,
     MessageEmbed,
