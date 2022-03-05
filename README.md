@@ -25,7 +25,9 @@ https://ferretcode.gitbook.io/discord-trolling/
 - Built in, easy command structuring
 - Simple command registration
 - Automatic project generator
+- Custom CLI
 - Documentation
+- Simple plugin management
 - troll funni
 
 # Acknowledgements 💌
@@ -35,16 +37,19 @@ https://ferretcode.gitbook.io/discord-trolling/
 # Roadmap 🛣️
 
 - ### Big Features
-  - Built-in pm2 integration for easy hosting/monitoring
+  - CLI Daemonization
+  - Custom templates
   - Built-in HTTP or Webhook requests for logging
   - ~~Full documentation~~
   - Voice wrapper
   - Embed maker
+  - ~~Plugin management~~
   - ~~Built-in command handler~~
 - ### Low priority
   - QOL features
   - Improved tests
 - ### Not confirmed
+  - Write Discord API wrapper from scratch
 
 # Quickstart 💨
 
