@@ -4,6 +4,7 @@ const {
   MessageButton,
   MessageSelectMenu,
 } = require("discord.js");
+const { Parser } = require("troll-file");
 
 const client = require("./classes/client");
 const command = require("./classes/command");
@@ -27,4 +28,5 @@ module.exports = {
     MessageButton,
     MessageSelectMenu,
   },
+  Parser,
 };
