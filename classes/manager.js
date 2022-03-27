@@ -1,5 +1,6 @@
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
+const { Parser } = require("troll-file");
 
 const chalk = require("chalk");
 
@@ -72,6 +73,22 @@ class Manager {
           });
         });
     });
+  };
+
+  /**
+   * Registers slash commands from a .troll schema file
+   * @param {string} file the path to the troll file for commands
+   * @param {Parser} parser the instance of a parser
+   */
+  static registerCommandsFromSchema = (file, parser) => {
+    const parsedConfig = parser.parse(`${parser.path}/config.troll`);
+    const parsedCommands = parser.parse(`${file}`);
+
+    const rest = new REST({ version: "9" }).setToken(
+      parsedConfig.bot.config.token
+    );
+
+    //rest.put()
   };
 }
 
