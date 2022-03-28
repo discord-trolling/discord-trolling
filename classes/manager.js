@@ -81,14 +81,58 @@ class Manager {
    * @param {Parser} parser the instance of a parser
    */
   static registerCommandsFromSchema = (file, parser) => {
-    const parsedConfig = parser.parse(`${parser.path}/config.troll`);
-    const parsedCommands = parser.parse(`${file}`);
+    return new Promise((resolve, reject) => {
+      const parsedConfig = parser.parse(`${parser.path}/config.troll`);
+      const parsedCommands = parser.parse(`${file}`);
 
-    const rest = new REST({ version: "9" }).setToken(
-      parsedConfig.bot.config.token
-    );
+      const rest = new REST({ version: "9" }).setToken(
+        parsedConfig.bot.config.token
+      );
 
-    //rest.put()
+      const commands = [];
+
+      for (const [name, body] of Object.entries(parsedCommands.commands)) {
+        const command = {
+          name,
+          ...body,
+        };
+
+        commands.push(command);
+      }
+
+      rest
+        .put(
+          parsedCommands.config.isGuildCommand
+            ? Routes.applicationGuildCommands(
+                parsedCommands.config.clientId,
+                parsedCommands.config.guildId
+              )
+            : Routes.applicationCommands(parsedCommands.config.clientId),
+          {
+            body: commands,
+          }
+        )
+        .then((res) => {
+          console.log(
+            chalk.bgGreen("✓ COMMAND:") + " New guild command registered!"
+          );
+
+          resolve({
+            status: "OK",
+            message: "New command registered!",
+          });
+        })
+        .catch((err) => {
+          console.log(
+            chalk.bgRed("✖ COMMAND:") + " Command failed to register!"
+          );
+
+          reject({
+            status: "ERR",
+            message: err,
+          });
+        });
+    });
   };
 }
 
