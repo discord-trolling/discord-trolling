@@ -28,11 +28,12 @@ https://ferretcode.gitbook.io/discord-trolling/
 - Custom CLI
 - Documentation
 - Simple plugin management
+- Large & growing ecosystem of tools
 - troll funni
 
 # Acknowledgements 💌
 
-- [JiggsFld who helped me test in a production environment](https://github.com/JiggsFld)
+- [doisoundlikeababy who helped me test in a production environment](https://github.com/doisoundlikeababy)
 
 # Roadmap 🛣️
 
@@ -43,6 +44,7 @@ https://ferretcode.gitbook.io/discord-trolling/
   - ~~Full documentation~~
   - Voice wrapper
   - Embed maker
+  - Custom modal implementation
   - ~~Plugin management~~
   - ~~Built-in command handler~~
 - ### Low priority
@@ -50,12 +52,14 @@ https://ferretcode.gitbook.io/discord-trolling/
   - Improved tests
 - ### Not confirmed
   - Write Discord API wrapper from scratch
+  - Desktop app
 
 # Quickstart 💨
 
 To get started, you can run: `npx create-discord-trolling-app`, (recommended)
+Then, visit the documentation at https://ferretcode.gitbook.io/discord-trolling/
 
-OR
+OR (unrecommended)
 
 - Run `npm install discord-trolling`
 - Create index.js
@@ -132,7 +136,7 @@ module.exports.ping = class extends Troll {
 
 # Running Tests 🧐
 
-To verify that the library is working, please open test.js and replace the "your bot token", "your bot id" and "your guild id" fields with the respective information, and run the file.
+New tests coming soon
 
 # Contributing 💻
 
@@ -140,7 +144,7 @@ Contributions are always welcome and great to see!
 
 ## You can either:
 
-- Create your contribution, make a PR and hope a maintainer sees it.
-- Or join the Discord server at https://discord.gg/cvx9WS7V and propose an idea to me or a maintainer or tell us about a PR you made.
+- Create your contribution, and make a PR
+- Or join the Discord server at https://discord.gg/cvx9WS7V and ask what you can do
 
 If you are adding a new class, please follow the UpperCamelCase naming convention.
